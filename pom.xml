@@ -24,16 +24,31 @@
         <maven.compiler.target>16</maven.compiler.target>
     </properties>
     <dependencies>
+        <!-- - - - - - Test - - - - - -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>RELEASE</version>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${org.testng.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- - - - - - Automation - - - - - -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>${org.seleniumhq.selenium.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>3.8.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+            <!-- <scope>test</scope> -->
         </dependency>
     </dependencies>
    <build> <plugins>
@@ -66,6 +81,35 @@
                 </drivers>
             </configuration>
         </plugin>
+       <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-surefire-plugin</artifactId>
+
+           <version>${maven.surefire.plugin.version}</version>
+           <configuration>
+               <argLine>-Xms512m -Xmx1024m</argLine>
+               <skipTests>false</skipTests>
+               <suiteXmlFiles>
+                   <suiteXmlFile>testng.xml</suiteXmlFile>
+                   <suiteXmlFile>${application.testng.name}</suiteXmlFile>
+               </suiteXmlFiles>
+
+               <reportsDirectory>${testng.reports.directory}</reportsDirectory>
+
+               <argLine>
+                   -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+               </argLine>
+           </configuration>
+           <dependencies>
+               <dependency>
+                   <groupId>org.aspectj</groupId>
+                   <artifactId>aspectjweaver</artifactId>
+
+                   <version>${aspectj.version}</version>
+                   <scope>compile</scope>
+               </dependency>
+           </dependencies>
+       </plugin>
 
    </plugins>
    </build>
