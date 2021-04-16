@@ -1,9 +1,16 @@
 package test;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.AfterClass;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterClass;
+
+import java.util.concurrent.TimeUnit;
+
 
 public class LocalTestRunner {
-    private String url = "http://google.com";
+    private String url = "https://artsted-dev.netlify.app/";
     private static WebDriver driver;
     protected WebDriver launch() throws InterruptedException {
         WebDriver driver = getDriver();
