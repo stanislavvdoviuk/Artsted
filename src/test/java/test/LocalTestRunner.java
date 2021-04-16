@@ -1,28 +1,32 @@
 package test;
-package seleniumpackage;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.AfterClass;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 public class LocalTestRunner {
-    public static void main(String[] args) {
-        WebDriver driver = new FirefoxDriver();
-        String baseWebUrl = "https://www.linkedin.com/";
-        String expectedWebsiteTitle = "World’s Largest Professional Network | LinkedIn";
-        String actualWebsiteTitle = "";
+    private String url = "http://google.com";
+    private static WebDriver driver;
+    protected WebDriver launch() throws InterruptedException {
+        WebDriver driver = getDriver();
+        driver.get(url);
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
 
-        driver.get(baseWebUrl);
-
-        actualWebsiteTitle = driver.getTitle();
-
-        if (actualWebsiteTitle.contentEquals(expectedWebsiteTitle)) {
-            System.out.println("Test Passed!");
-        } else {
-            System.out.println("Test Failed!");
+        return driver;
+    }
+    protected WebDriver getDriver() throws InterruptedException {
+        if (driver == null) {
+            WebDriverManager.chromedriver().setup();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            driver = new ChromeDriver(chromeOptions);
+            launch();
+            Thread.sleep(2000);
         }
 
-        driver.close();
-
-        System.exit(0);
-
+        return driver;
+    }
+    @AfterClass(alwaysRun = true)
+    public void afterClass() {
+        driver.quit();
+        driver = null;
     }
 }
