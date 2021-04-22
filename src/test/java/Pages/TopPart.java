@@ -80,7 +80,7 @@ public class TopPart {
     public WebElement findButtonArtworks(){return  driver.findElement(buttonArtworks);}
     public WebElement findButtonArtists(){return  driver.findElement(buttonArtists);}
     public WebElement findButtonPremium(){return  driver.findElement(buttonPremium);}
-    public WebElement findButton(){return  driver.findElement(buttonSignIn);}
+    public WebElement findButtonSignIn(){return  driver.findElement(buttonSignIn);}
     public WebElement findButtonRegister(){return  driver.findElement(buttonRegister);}
     public WebElement findInput(){return  driver.findElement(loginInputEmail);}
     public WebElement findInputP(){return  driver.findElement(loginInputPassword);}
@@ -113,7 +113,7 @@ public class TopPart {
     public void clickButtonArtworks(){ findButtonArtworks().click();}
     public void clickButtonArtists(){ findButtonArtists().click();}
     public void clickButtonPremium(){ findButtonPremium().click();}
-    public void clickButton(){ findButton().click();}
+    public void clickButton(){ findButtonSignIn().click();}
     public void clickButtonRegister(){ findButtonRegister().click();}
 
     public void putLogin(String text)
@@ -173,6 +173,13 @@ public class TopPart {
     public void clickButtonAddToCart(){ findButtonAddToCart().click();}
     public void clickButtonCart(){ findButtonCart().click();}
     public void clickButtonCheckout(){ findButtonCheckout().click();}
+
+    public void signinAnAcc(String login, String password){
+        findButtonSignIn().click();
+        findInput().sendKeys(login);
+        findInputP().sendKeys(password);
+        findButtonSign().click();
+    }
 }
 
 
