@@ -33,6 +33,10 @@ public class TopPart {
     private By buttonNext2;
     private By buttonCategory;
     private By buttonCatDigital;
+    private By buttonAnArtwork;
+    private By buttonAddToCart;
+    private By buttonCart;
+    private By buttonCheckout;
 
 
     public TopPart(WebDriver driver)  {
@@ -64,6 +68,10 @@ public class TopPart {
         this.buttonNext2 = By.cssSelector("#root > div > div.registration_wrapper > div.wrapper_navigation_btn > button:nth-child(2)");
         this.buttonCategory = By.cssSelector("#root > div > div.registration_wrapper > div.registration_wrapper_body > div > form > div.registration_categories_select > div > div > div > div.custom_dropdown_wrapper_search > label > img");
         this.buttonCatDigital = By.cssSelector("#root > div > div.registration_wrapper > div.registration_wrapper_body > div > form > div.registration_categories_select > div > div > div > div.custom_dropdown_option.overflow_scrollbar.active_custom_dropdown > span:nth-child(1)");
+        this.buttonAnArtwork = By.cssSelector("#root > div > div > div.artworks_list.wrapper_every_section > div > div:nth-child(1) > div > a > img");
+        this.buttonAddToCart = By.cssSelector("#root > div > div.public_artwork_wrapper > div.public_artwork_container > div.public_artwork_item_content > div.public_artwork_item_content_body > button");
+        this.buttonCart = By.cssSelector("#header > div.header_login_section_user_active.header_login_section > div.cart_wrapper > img");
+        this.buttonCheckout = By.cssSelector("#root > div > form > div.user_cart_wrapper_content > div > div.user_cart_price_checkout > button");
 
     }
 
@@ -94,6 +102,11 @@ public class TopPart {
     public WebElement findButtonNext2(){return  driver.findElement(buttonNext2);}
     public WebElement findButtonCategory(){return  driver.findElement(buttonCategory);}
     public WebElement findButtonCatDigital(){return  driver.findElement(buttonCatDigital);}
+    public WebElement findButtonAnArtwork(){return  driver.findElement(buttonAnArtwork);}
+    public WebElement findButtonAddToCart(){return  driver.findElement(buttonAddToCart);}
+    public WebElement findButtonCart(){return  driver.findElement(buttonCart);}
+    public WebElement findButtonCheckout(){return  driver.findElement(buttonCheckout);}
+
 
     public void clickButtonArtsted(){ findButtonArtsted().click();}
     public void clickButtonDiscover(){ findButtonDiscover().click();}
@@ -156,6 +169,10 @@ public class TopPart {
     public void clickButtonNext2(){ findButtonNext2().click();}
     public void clickButtonCategory(){ findButtonCategory().click();}
     public void clickButtonCatDigital(){ findButtonCatDigital().click();}
+    public void clickButtonAnArtwork(){ findButtonAnArtwork().click();}
+    public void clickButtonAddToCart(){ findButtonAddToCart().click();}
+    public void clickButtonCart(){ findButtonCart().click();}
+    public void clickButtonCheckout(){ findButtonCheckout().click();}
 }
 
 
