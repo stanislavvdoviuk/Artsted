@@ -60,16 +60,16 @@ public class FirstTest extends LocalTestRunner {
         //Thread.sleep(500);
         //topPart.clickButtonCatDigital();
         //Thread.sleep(3000);
-        topPart.clickButton();
-        topPart.putLogin("investorreevesnathan@yahoo.com");
-        topPart.putPassword("123");
-        topPart.clickButtonSign();
-        topPart.clickButtonArtworks();
-        topPart.clickButtonAnArtwork();
-        topPart.clickButtonAddToCart();
-        topPart.clickButtonCart();
-        topPart.clickButtonCheckout();
-        Thread.sleep(500);
-
+//        topPart.clickButton();
+//        topPart.putLogin("investorreevesnathan@yahoo.com");
+//        topPart.putPassword("123");
+//        topPart.clickButtonSign();
+//        topPart.clickButtonArtworks();
+//        topPart.clickButtonAnArtwork();
+//        topPart.clickButtonAddToCart();
+//        topPart.clickButtonCart();
+//        topPart.clickButtonCheckout();
+//        Thread.sleep(500);
+topPart.signUser("","");
     }
 }

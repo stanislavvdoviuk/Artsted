@@ -6,38 +6,17 @@ import org.openqa.selenium.WebElement;
 
 public class TopPart {
     protected WebDriver driver;
-    private By buttonArtsted;
-    private By buttonDiscover;
-    private By buttonArtworks;
-    private By buttonArtists;
-    private By buttonPremium;
-    private By buttonSignIn;
-    private By buttonRegister;
-    private By loginInputEmail;
-    private By loginInputPassword;
-    private By loginInputRepeadPassword;
-    private By buttonSign;
-    private By checkButton1;
-    private By buttonRegisterAcc;
-    private By buttonIAmArtist;
-    private By buttonApply;
-    private By inputName;
-    private By inputSurename;
-    private By inputCountry;
-    private By inputLinkedIn;
-    private By inputFacebook;
-    private By inputInstagram;
-    private By inputBehance;
-    private By inputAboutYou;
-    private By buttonNext;
-    private By buttonNext2;
-    private By buttonCategory;
-    private By buttonCatDigital;
-    private By buttonAnArtwork;
-    private By buttonAddToCart;
-    private By buttonCart;
-    private By buttonCheckout;
+    private By artstedLogo;
+    private By discoverButton;
+    private By artworksButton;
+    private By artistsButton;
+    private By premiumButton;
+    private By signInButton;
+    private By registerButton;
 
+    private By emailInput;
+    private By passwordInput;
+    private By loginbutton;
 
     public TopPart(WebDriver driver)  {
         this.driver=driver;
@@ -75,104 +54,26 @@ public class TopPart {
 
     }
 
-    public WebElement findButtonArtsted(){return  driver.findElement(buttonArtsted);}
-    public WebElement findButtonDiscover(){return  driver.findElement(buttonDiscover);}
-    public WebElement findButtonArtworks(){return  driver.findElement(buttonArtworks);}
-    public WebElement findButtonArtists(){return  driver.findElement(buttonArtists);}
-    public WebElement findButtonPremium(){return  driver.findElement(buttonPremium);}
-    public WebElement findButton(){return  driver.findElement(buttonSignIn);}
-    public WebElement findButtonRegister(){return  driver.findElement(buttonRegister);}
-    public WebElement findInput(){return  driver.findElement(loginInputEmail);}
-    public WebElement findInputP(){return  driver.findElement(loginInputPassword);}
-    public WebElement findInputRP(){return  driver.findElement(loginInputRepeadPassword);}
-    public WebElement findCheckButton1(){return  driver.findElement(checkButton1);}
-    public WebElement findButtonRegisterAcc(){return  driver.findElement(buttonRegisterAcc);}
-    public WebElement findButtonSign(){return  driver.findElement(buttonSign);}
-    public WebElement findButtonIAmArtist(){return  driver.findElement(buttonIAmArtist);}
-    public WebElement findButtonApply(){return  driver.findElement(buttonApply);}
-    public WebElement findInputName(){return  driver.findElement(inputName);}
-    public WebElement findInputSurename(){return  driver.findElement(inputSurename);}
-    public WebElement findInputCountry(){return  driver.findElement(inputCountry);}
-    public WebElement findInputLinkedin(){return  driver.findElement(inputLinkedIn);}
-    public WebElement findInputFacebook(){return  driver.findElement(inputFacebook);}
-    public WebElement findInputInstagram(){return  driver.findElement(inputInstagram);}
-    public WebElement findInputBehance(){return  driver.findElement(inputBehance);}
-    public WebElement findInputAboutYou(){return  driver.findElement(inputAboutYou);}
-    public WebElement findButtonNext(){return  driver.findElement(buttonNext);}
-    public WebElement findButtonNext2(){return  driver.findElement(buttonNext2);}
-    public WebElement findButtonCategory(){return  driver.findElement(buttonCategory);}
-    public WebElement findButtonCatDigital(){return  driver.findElement(buttonCatDigital);}
-    public WebElement findButtonAnArtwork(){return  driver.findElement(buttonAnArtwork);}
-    public WebElement findButtonAddToCart(){return  driver.findElement(buttonAddToCart);}
-    public WebElement findButtonCart(){return  driver.findElement(buttonCart);}
-    public WebElement findButtonCheckout(){return  driver.findElement(buttonCheckout);}
+    public WebElement findButtonArtsted(){return  driver.findElement(artstedLogo);}
+    public WebElement findButtonDiscover(){return  driver.findElement(discoverButton);}
+    public WebElement findButtonArtworks(){return  driver.findElement(artworksButton);}
+    public WebElement findButtonArtists(){return  driver.findElement(artistsButton);}
+    public WebElement findButtonPremium(){return  driver.findElement(premiumButton);}
+    public WebElement findSingInButton(){return  driver.findElement(signInButton);}
+    public WebElement findButtonRegister(){return  driver.findElement(registerButton);}
+    public WebElement findEmailInput(){return  driver.findElement(emailInput);}
+    public WebElement findPasswordInput(){return  driver.findElement(passwordInput);}
+    public WebElement findLoginButton(){return  driver.findElement(loginbutton);}
+
+   public void signUser(String email,String password)
+   {
+       findSingInButton().click();
+       findEmailInput().sendKeys(email);
+       findPasswordInput().sendKeys(password);
+       findLoginButton().click();
+   }
 
 
-    public void clickButtonArtsted(){ findButtonArtsted().click();}
-    public void clickButtonDiscover(){ findButtonDiscover().click();}
-    public void clickButtonArtworks(){ findButtonArtworks().click();}
-    public void clickButtonArtists(){ findButtonArtists().click();}
-    public void clickButtonPremium(){ findButtonPremium().click();}
-    public void clickButton(){ findButton().click();}
-    public void clickButtonRegister(){ findButtonRegister().click();}
-
-    public void putLogin(String text)
-    {
-        findInput().sendKeys(text);
-    }
-    public void putPassword(String text)
-    {
-        findInputP().sendKeys(text);
-    }
-    public void putRepeadPassword(String text)
-    {
-        findInputRP().sendKeys(text);
-    }
-    public void clickButtonSign(){ findButtonSign().click();}
-    public void clickCheckButton1(){ findCheckButton1().click();}
-    public void clickButtonRegisterAcc(){ findButtonRegisterAcc().click();}
-    public void clickButtonIAmArtist(){ findButtonIAmArtist().click();}
-    public void clickButtonApply(){ findButtonApply().click();}
-    public void putName(String text)
-    {
-        findInputName().sendKeys(text);
-    }
-    public void putSurename(String text)
-    {
-        findInputSurename().sendKeys(text);
-    }
-    public void putCountry(String text)
-    {
-        findInputCountry().sendKeys(text);
-    }
-    public void putLinkedin(String text)
-    {
-        findInputLinkedin().sendKeys(text);
-    }
-    public void putFacebook(String text)
-    {
-        findInputFacebook().sendKeys(text);
-    }
-    public void putInstagram(String text)
-    {
-        findInputInstagram().sendKeys(text);
-    }
-    public void putBehance(String text)
-    {
-        findInputBehance().sendKeys(text);
-    }
-    public void putAboutYou(String text)
-    {
-        findInputAboutYou().sendKeys(text);
-    }
-    public void clickButtonNext(){ findButtonNext().click();}
-    public void clickButtonNext2(){ findButtonNext2().click();}
-    public void clickButtonCategory(){ findButtonCategory().click();}
-    public void clickButtonCatDigital(){ findButtonCatDigital().click();}
-    public void clickButtonAnArtwork(){ findButtonAnArtwork().click();}
-    public void clickButtonAddToCart(){ findButtonAddToCart().click();}
-    public void clickButtonCart(){ findButtonCart().click();}
-    public void clickButtonCheckout(){ findButtonCheckout().click();}
 }
 
 
