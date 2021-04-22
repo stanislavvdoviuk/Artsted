@@ -36,21 +36,6 @@ public class TopPart {
         this.buttonIAmArtist = By.cssSelector("#root > div > div.auth_popup_wrapper > div > div > form > div.wrapper_radio_btn > div:nth-child(1) > div > label > p");
         this.buttonApply = By.cssSelector("#root > div > div.auth_popup_wrapper > div > div > form > button");
         this.inputName = By.cssSelector("#root > div > div.registration_wrapper > div.registration_wrapper_body > div > div.registration_main_info_container > div:nth-child(1) > div > label > input");
-        this.inputSurename = By.cssSelector("#root > div > div.registration_wrapper > div.registration_wrapper_body > div > div.registration_main_info_container > div:nth-child(2) > div > label > input");
-        this.inputCountry = By.cssSelector("#root > div > div.registration_wrapper > div.registration_wrapper_body > div > div.registration_main_info_container > div:nth-child(3) > div > div > div > div.custom_dropdown_wrapper_search > label > input");
-        this.inputLinkedIn = By.cssSelector("#root > div > div.registration_wrapper > div.registration_wrapper_body > div > div.registration_main_info_container_social > div > div:nth-child(1) > label > input");
-        this.inputFacebook = By.cssSelector("#root > div > div.registration_wrapper > div.registration_wrapper_body > div > div.registration_main_info_container_social > div > div:nth-child(3) > label > input");
-        this.inputInstagram = By.cssSelector("#root > div > div.registration_wrapper > div.registration_wrapper_body > div > div.registration_main_info_container_social > div > div:nth-child(4) > label > input");
-        this.inputBehance = By.cssSelector("#root > div > div.registration_wrapper > div.registration_wrapper_body > div > div.registration_main_info_container_social > div > div:nth-child(2) > label > input");
-        this.inputAboutYou = By.cssSelector("#root > div > div.registration_wrapper > div.registration_wrapper_body > div > div.registration_main_info_about > div.input_component > textarea");
-        this.buttonNext = By.cssSelector("#root > div > div.registration_wrapper > div.wrapper_navigation_btn > button");
-        this.buttonNext2 = By.cssSelector("#root > div > div.registration_wrapper > div.wrapper_navigation_btn > button:nth-child(2)");
-        this.buttonCategory = By.cssSelector("#root > div > div.registration_wrapper > div.registration_wrapper_body > div > form > div.registration_categories_select > div > div > div > div.custom_dropdown_wrapper_search > label > img");
-        this.buttonCatDigital = By.cssSelector("#root > div > div.registration_wrapper > div.registration_wrapper_body > div > form > div.registration_categories_select > div > div > div > div.custom_dropdown_option.overflow_scrollbar.active_custom_dropdown > span:nth-child(1)");
-        this.buttonAnArtwork = By.cssSelector("#root > div > div > div.artworks_list.wrapper_every_section > div > div:nth-child(1) > div > a > img");
-        this.buttonAddToCart = By.cssSelector("#root > div > div.public_artwork_wrapper > div.public_artwork_container > div.public_artwork_item_content > div.public_artwork_item_content_body > button");
-        this.buttonCart = By.cssSelector("#header > div.header_login_section_user_active.header_login_section > div.cart_wrapper > img");
-        this.buttonCheckout = By.cssSelector("#root > div > form > div.user_cart_wrapper_content > div > div.user_cart_price_checkout > button");
 
     }
 
