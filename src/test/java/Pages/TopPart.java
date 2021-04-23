@@ -22,13 +22,13 @@ public class TopPart {
         this.driver=driver;
         this.artstedLogo = By.cssSelector("");
         this.discoverButton = By.cssSelector("");
-        this.artworksButton = By.cssSelector("");
+        this.artworksButton = By.cssSelector("div.header_navigation > ul > li:nth-child(2) > a");
         this.artistsButton = By.cssSelector("");
         this.premiumButton = By.cssSelector("");
         this.signInButton = By.cssSelector("div.header_sign_in_container > span:nth-child(1)");
         this.registerButton = By.cssSelector(" div.header_sign_in > div.header_sign_in_container > span:nth-child(3)");
         this.emailInput = By.cssSelector("div.input_component.true > label > input");
-        this.passwordInput = By.cssSelector("div.wrapper_inputs_auth > div.input_component.input_component_unset_margin");
+        this.passwordInput = By.cssSelector("div.auth_popup_wrapper > div > div > form > div.wrapper_inputs_auth > div.input_component.input_component_unset_margin > label > input");
         this.loginbutton = By.cssSelector("div.wrapper_btn > button");
 
 
@@ -51,6 +51,10 @@ public class TopPart {
        findEmailInput().sendKeys(email);
        findPasswordInput().sendKeys(password);
        findLoginButton().click();
+   }
+   public void clickArtworks()
+   {
+       findArtworksButton().click();
    }
 
 
