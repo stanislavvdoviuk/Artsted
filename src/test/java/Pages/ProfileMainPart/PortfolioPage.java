@@ -1,9 +1,10 @@
 package Pages.ProfileMainPart;
-import java.util.list;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+
+
+import java.util.List;
 
 public class PortfolioPage {
 
@@ -20,7 +21,7 @@ public class PortfolioPage {
     private By categoriesDropdown;
     private By styleDropdown;
     private By materialsDropdown;
-    private By openedmaterialsDropdown;
+   // private By openedMaterialsDropdown;
     private By materialCostInput;
     private By heightInput;
     private By depthInput;
@@ -44,7 +45,7 @@ public class PortfolioPage {
         this.categoriesDropdown = By.cssSelector("div:nth-child(1) > div.registration_categories_select > div > div > div > div.custom_dropdown_wrapper_search > label > input");
         this.styleDropdown = By.cssSelector("div:nth-child(2) > div.registration_categories_select > div > div > div > div.custom_dropdown_wrapper_search > label > input");
         this.materialsDropdown = By.cssSelector("div.wrapper_upload_work__material_wrapper > div:nth-child(1) > div.registration_categories_select > div > div > div > div.custom_dropdown_wrapper_search > label > input");
-        this.openedmaterialsDropdown = By.cssSelector(" div.custom_dropdown_option.overflow_scrollbar > span");
+     //   this.openedMaterialsDropdown = By.cssSelector("div.custom_dropdown_option.overflow_scrollbar > span");
         this.materialCostInput = By.cssSelector("div.final_price_wrapper > div > label > input");
         this.heightInput = By.cssSelector("div.wrapper_upload_work__ranges__height > div > label > input");
         this.depthInput = By.cssSelector("div.wrapper_upload_work__ranges__width > div > label > input");
@@ -76,7 +77,8 @@ public class PortfolioPage {
     public WebElement findExhibitionsPartTextarea() { return driver.findElement(exhibitionsPartTextarea); }
     public WebElement findPublicationsTextarea() { return driver.findElement(publicationsTextarea); }
     public WebElement findAgreeTermsCheckB() { return driver.findElement(agreeTermsCheckB); }
-public List<WebElement> findmaterialsDropdown() {return driver.findElement(openedmaterialsDropdown);}
+
+
 
 
     public void clickButtonUploadWork() { findUploadWorkButton().click(); }
@@ -87,6 +89,8 @@ public List<WebElement> findmaterialsDropdown() {return driver.findElement(opene
         findYearInput().sendKeys(year);
         findDescriptionTextarea().sendKeys(description);
         findMaterialsDropdown().click();
+        List<WebElement> openDropDownMateriald =  driver.findElements(By.cssSelector("div.custom_dropdown_option.overflow_scrollbar > span"));
+        openDropDownMateriald.get(2).click();
         findMaterialCostInput().sendKeys(matcos);
         findHeightInput().sendKeys(height);
         findDepthInput().sendKeys(depth);
