@@ -9,10 +9,10 @@ public class ShoppingTest extends LocalTestRunner {
     public void checkShopping() throws InterruptedException {
         launch();
         TopPart topPart=new TopPart(getDriver());
-        topPart.signUser("investorkrystal47@yahoo.com", "123");
-        topPart.clickArtworks();
-        ArtworksPage art=new ArtworksPage(getDriver());
-        art.clickOnFreeArtwork();
-        Thread.sleep(10000);
+        //topPart.signUser("investorkrystal47@yahoo.com", "123");
+        //topPart.clickArtworks();
+        //ArtworksPage art=new ArtworksPage(getDriver());
+        //art.clickOnFreeArtwork();
+        //Thread.sleep(10000);
     }
 }

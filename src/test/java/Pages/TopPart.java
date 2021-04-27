@@ -27,8 +27,8 @@ public class TopPart {
         this.premiumButton = By.cssSelector("");
         this.signInButton = By.cssSelector("div.header_sign_in_container > span:nth-child(1)");
         this.registerButton = By.cssSelector(" div.header_sign_in > div.header_sign_in_container > span:nth-child(3)");
-        this.emailInput = By.cssSelector("div.input_component.true > label > input");
-        this.passwordInput = By.cssSelector("div.auth_popup_wrapper > div > div > form > div.wrapper_inputs_auth > div.input_component.input_component_unset_margin > label > input");
+        this.emailInput = By.cssSelector("div.wrapper_inputs_auth > div:nth-child(1) > label > input");
+        this.passwordInput = By.cssSelector("div.wrapper_inputs_auth > div:nth-child(2) > label > input");
         this.loginbutton = By.cssSelector("div.wrapper_btn > button");
 
 
