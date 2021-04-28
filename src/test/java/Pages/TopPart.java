@@ -13,10 +13,18 @@ public class TopPart {
     private By premiumButton;
     private By signInButton;
     private By registerButton;
-
     private By emailInput;
     private By passwordInput;
-    private By loginbutton;
+    private By repeatPasswordInput;
+    private By registerAccButton;
+    private By loginButton;
+    private By termsAgreeCheckB;
+    private By receiveEmailCheckB;
+    private By regViaFacebookButton;
+    private By anArtistRadioB;
+    private By anInvestorRadioB;
+    private By applyButton;
+
 
     public TopPart(WebDriver driver)  {
         this.driver=driver;
@@ -29,9 +37,15 @@ public class TopPart {
         this.registerButton = By.cssSelector(" div.header_sign_in > div.header_sign_in_container > span:nth-child(3)");
         this.emailInput = By.cssSelector("div.wrapper_inputs_auth > div:nth-child(1) > label > input");
         this.passwordInput = By.cssSelector("div.wrapper_inputs_auth > div:nth-child(2) > label > input");
-        this.loginbutton = By.cssSelector("div.wrapper_btn > button");
-
-
+        this.repeatPasswordInput = By.cssSelector("div:nth-child(3) > label > input");
+        this.registerAccButton = By.cssSelector(" div.wrapper_btn > button");
+        this.loginButton = By.cssSelector("div.wrapper_btn > button");
+        this.regViaFacebookButton = By.cssSelector("div.fb_sign_wrapper > span > button");
+        this.termsAgreeCheckB = By.cssSelector("div:nth-child(1) > label > span");
+        this.receiveEmailCheckB = By.cssSelector(" div:nth-child(2) > label > span");
+        this.anArtistRadioB = By.cssSelector("div:nth-child(1) > div > label > span > div");
+        this.anInvestorRadioB = By.cssSelector("div:nth-child(2) > div > label > span > div");
+        this.applyButton = By.cssSelector("div.auth_popup_wrapper > div > div > form > button");
     }
 
     public WebElement findArtstedLogo(){return  driver.findElement(artstedLogo);}
@@ -43,7 +57,15 @@ public class TopPart {
     public WebElement findRegisterButton(){return  driver.findElement(registerButton);}
     public WebElement findEmailInput(){return  driver.findElement(emailInput);}
     public WebElement findPasswordInput(){return  driver.findElement(passwordInput);}
-    public WebElement findLoginButton(){return  driver.findElement(loginbutton);}
+    public WebElement findRepeatPasswordInput(){return  driver.findElement(repeatPasswordInput);}
+    public WebElement findLoginButton() {return driver.findElement(loginButton);}
+    public WebElement findRegisterAccButton(){return  driver.findElement(registerAccButton);}
+    public WebElement findTermsAgreeCheckB(){return  driver.findElement(termsAgreeCheckB);}
+    public WebElement findReceiveEmailCheckB(){return  driver.findElement(receiveEmailCheckB);}
+    public WebElement findRegViaFacebookButton(){return  driver.findElement(regViaFacebookButton);}
+    public WebElement findAnArtistRadioB(){return  driver.findElement(anArtistRadioB);}
+    public WebElement findAnInvestorRadioB(){return  driver.findElement(anInvestorRadioB);}
+    public WebElement findApplyButton() {return driver.findElement(applyButton);}
 
    public void signUser(String email,String password)
    {
@@ -52,6 +74,19 @@ public class TopPart {
        findPasswordInput().sendKeys(password);
        findLoginButton().click();
    }
+
+    public void registerUser(String email,String password,String reppas)
+    {
+        findRegisterButton().click();
+        findEmailInput().sendKeys(email);
+        findPasswordInput().sendKeys(password);
+        findRepeatPasswordInput().sendKeys(reppas);
+        findTermsAgreeCheckB().click();
+        findReceiveEmailCheckB().click();
+        findRegisterAccButton().click();
+        findAnArtistRadioB().click();
+        findApplyButton().click();
+    }
    public void clickArtworks()
    {
        findArtworksButton().click();
