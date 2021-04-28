@@ -22,9 +22,9 @@ public class UploadWork extends LocalTestRunner {
         portfolioPage.clickButtonUploadWork();
         Thread.sleep(1000);
 
-        portfolioPage.uploadArtwork("sea", "2000", "description", "333", "30", "34", "55", "999", "-", "-");
-        Thread.sleep(3000);
+        portfolioPage.uploadArtwork("sea", "2000", "description", "333", "30", "34", "55", "1", "999", "-", "-");
+        Thread.sleep(5000);
 
-
+        //portfolioPage.uploadDropDowns();
         }
     }
