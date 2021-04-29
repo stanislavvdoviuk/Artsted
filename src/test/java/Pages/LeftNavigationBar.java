@@ -40,4 +40,6 @@ public class LeftNavigationBar {
     public void clickButtonStatistics() { findStatisticsButton().click(); }
 
     public void clickButtonPortfolio() { findPortfolioButton().click(); }
+
+    public void clickButtonSupport() { findSupportButton().click(); }
 }

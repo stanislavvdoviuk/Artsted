@@ -18,8 +18,18 @@ public class SupportPage {
         this.applyButton = By.cssSelector("div.wrapper_support_form > button");
         this.salesItem = By.cssSelector("div.custom_dropdown_option.overflow_scrollbar.active_custom_dropdown > span:nth-child(3)");
     }
-    //public WebElement findNeedHelpDropdown() { return driver.findElement(lastUploadsButton); }
-    //public WebElement findMostViewedButton() { return driver.findElement(mostViewedButton); }
-    //public WebElement findSoldButton() { return driver.findElement(soldButton); }
-    //public WebElement findUploadWorkButton() { return driver.findElement(uploadWorkButton); }
+    public WebElement findNeedHelpDropdown() { return driver.findElement(needHelpDropdown); }
+    public WebElement findDescriptionTextarea() { return driver.findElement(descriptionTextarea); }
+    public WebElement findApplyButton() { return driver.findElement(applyButton); }
+    public WebElement findSalesItem() { return driver.findElement(salesItem); }
+
+    public void supportRequest(String text)throws InterruptedException{
+        findNeedHelpDropdown().click();
+        Thread.sleep(1000);
+        findSalesItem().click();
+        Thread.sleep(1000);
+        findDescriptionTextarea().sendKeys(text);
+        Thread.sleep(1000);
+        findApplyButton().click();
+    }
 }

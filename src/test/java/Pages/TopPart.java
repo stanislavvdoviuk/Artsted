@@ -13,6 +13,7 @@ public class TopPart {
     private By premiumButton;
     private By signInButton;
     private By registerButton;
+    private By cartButton;
     private By emailInput;
     private By passwordInput;
     private By repeatPasswordInput;
@@ -35,6 +36,7 @@ public class TopPart {
         this.premiumButton = By.cssSelector("");
         this.signInButton = By.cssSelector("div.header_sign_in_container > span:nth-child(1)");
         this.registerButton = By.cssSelector(" div.header_sign_in > div.header_sign_in_container > span:nth-child(3)");
+        this.cartButton = By.cssSelector("div.cart_wrapper > img");
         this.emailInput = By.cssSelector("div.wrapper_inputs_auth > div:nth-child(1) > label > input");
         this.passwordInput = By.cssSelector("div.wrapper_inputs_auth > div:nth-child(2) > label > input");
         this.repeatPasswordInput = By.cssSelector("div:nth-child(3) > label > input");
@@ -55,6 +57,7 @@ public class TopPart {
     public WebElement findPremiumButton(){return  driver.findElement(premiumButton);}
     public WebElement findSingInButton(){return  driver.findElement(signInButton);}
     public WebElement findRegisterButton(){return  driver.findElement(registerButton);}
+    public WebElement findCartButton() {return driver.findElement(cartButton);}
     public WebElement findEmailInput(){return  driver.findElement(emailInput);}
     public WebElement findPasswordInput(){return  driver.findElement(passwordInput);}
     public WebElement findRepeatPasswordInput(){return  driver.findElement(repeatPasswordInput);}
@@ -91,6 +94,7 @@ public class TopPart {
    {
        findArtworksButton().click();
    }
+   public void clickCart(){findCartButton().click();}
 
 
 }
