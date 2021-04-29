@@ -89,9 +89,22 @@ public class PortfolioPage {
     public void uploadArtwork(String title,String year,String description, String matcos, String height, String depth, String width, String weight, String price, String exh, String part) throws InterruptedException{
         //findUploadImagesButton().sendKeys("C:\\Users\\Михайло\\Desktop\\1.jpg");
         //Thread.sleep(5000);
-        findTitleInput().sendKeys(title);
-        findYearInput().sendKeys(year);
-        findDescriptionTextarea().sendKeys(description);
+   //     findTitleInput().sendKeys(title);
+   //     findYearInput().sendKeys(year);
+      //  findDescriptionTextarea().sendKeys(description);
+
+        List<WebElement> categoryDropDown = findCategoriesDropdown().findElements(By.cssSelector("div.wrapper_upload_work__details_info > div:nth-child(1) > div.registration_categories_select > div > div > div > div.custom_dropdown_option.overflow_scrollbar.active_custom_dropdown > span"));
+        System.out.println(categoryDropDown.get(1).getText());
+        for (WebElement option : categoryDropDown) {
+
+            if("Digital".equals(option.getText().trim()))
+
+                option.click();
+        }
+
+
+        Thread.sleep(3000);
+
         findCategoriesDropdown().click();
         Thread.sleep(2000);
         //List<WebElement> openDropDownMateriald =  driver.findElements(By.cssSelector("div.custom_dropdown_option.overflow_scrollbar > span"));
@@ -116,8 +129,8 @@ public class PortfolioPage {
         //categories.selectByVisibleText("Digital");
         //style.selectByVisibleText("Other");
         //materials.selectByVisibleText("Glass");
-
-
 }
+
+
 
 
