@@ -8,8 +8,8 @@ public class LoginTest extends LocalTestRunner{
     public void checkArtistLogin() throws InterruptedException {
     launch();
     TopPart topPart=new TopPart(getDriver());
-       topPart.signUser("ggbkciww@laste.ml", "12345678");
-       Thread.sleep(1000);
+       topPart.signUser("ggbkciww@laste.ml", "123456");
+       Thread.sleep(5000);
 }
     @Test(description = "Investor Login Test")
     public void checkInvestorLogin() throws InterruptedException {

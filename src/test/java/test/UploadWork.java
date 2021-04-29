@@ -13,7 +13,7 @@ public class UploadWork extends LocalTestRunner {
             PortfolioPage portfolioPage = new PortfolioPage(getDriver());
             TopPart topPart=new TopPart(getDriver());
 
-        topPart.signUser("16vswrxz@10mail.tk", "123456");
+        topPart.signUser("ggbkciww@laste.ml", "123456");
         Thread.sleep(1000);
 
         leftNavigationBar.clickButtonPortfolio();
