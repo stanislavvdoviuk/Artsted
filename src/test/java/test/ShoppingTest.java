@@ -17,6 +17,7 @@ public class ShoppingTest extends LocalTestRunner {
         art.setUnsoldWork();
         PublicArtworkPage publicart = new PublicArtworkPage(getDriver());
         publicart.clickAddtoCart();
+        topPart.clickCart();
         Cart cart = new Cart(getDriver());
         cart.clickCheckout();
         //art.clickOnFreeArtwork();

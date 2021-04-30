@@ -11,6 +11,7 @@ public class TopPart {
     private By artworksButton;
     private By artistsButton;
     private By premiumButton;
+    private By searchInput;
     private By signInButton;
     private By registerButton;
     private By cartButton;
@@ -29,11 +30,12 @@ public class TopPart {
 
     public TopPart(WebDriver driver)  {
         this.driver=driver;
-        this.artstedLogo = By.cssSelector("");
-        this.discoverButton = By.cssSelector("");
+        this.artstedLogo = By.cssSelector("div.header_navigation > a > img");
+        this.discoverButton = By.cssSelector("div.header_navigation > ul > li:nth-child(1) > a");
         this.artworksButton = By.cssSelector("div.header_navigation > ul > li:nth-child(2) > a");
-        this.artistsButton = By.cssSelector("");
-        this.premiumButton = By.cssSelector("");
+        this.artistsButton = By.cssSelector("div.header_navigation > ul > li:nth-child(3) > a");
+        this.premiumButton = By.cssSelector("div.header_navigation > ul > li:nth-child(4) > a");
+        this.searchInput = By.cssSelector("input[type=text]");
         this.signInButton = By.cssSelector("div.header_sign_in_container > span:nth-child(1)");
         this.registerButton = By.cssSelector(" div.header_sign_in > div.header_sign_in_container > span:nth-child(3)");
         this.cartButton = By.cssSelector("div.cart_wrapper > img");
@@ -55,6 +57,7 @@ public class TopPart {
     public WebElement findArtworksButton(){return  driver.findElement(artworksButton);}
     public WebElement findArtistsButton(){return  driver.findElement(artistsButton);}
     public WebElement findPremiumButton(){return  driver.findElement(premiumButton);}
+    public WebElement findSearchInput(){return  driver.findElement(searchInput);}
     public WebElement findSingInButton(){return  driver.findElement(signInButton);}
     public WebElement findRegisterButton(){return  driver.findElement(registerButton);}
     public WebElement findCartButton() {return driver.findElement(cartButton);}
