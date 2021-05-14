@@ -93,17 +93,17 @@ public class PortfolioPage {
    //     findYearInput().sendKeys(year);
       //  findDescriptionTextarea().sendKeys(description);
 
-        List<WebElement> categoryDropDown = findCategoriesDropdown().findElements(By.cssSelector("div.wrapper_upload_work__details_info > div:nth-child(1) > div.registration_categories_select > div > div > div > div.custom_dropdown_option.overflow_scrollbar.active_custom_dropdown > span"));
-        System.out.println(categoryDropDown.get(1).getText());
-        for (WebElement option : categoryDropDown) {
+        //List<WebElement> categoryDropDown = findCategoriesDropdown().findElements(By.cssSelector("div.wrapper_upload_work__details_info > div:nth-child(1) > div.registration_categories_select > div > div > div > div.custom_dropdown_option.overflow_scrollbar.active_custom_dropdown > span"));
+        //System.out.println(categoryDropDown.get(1).getText());
+        //for (WebElement option : categoryDropDown) {
 
-            if("Digital".equals(option.getText().trim()))
+            //if("Digital".equals(option.getText().trim()))
 
-                option.click();
-        }
+                //option.click();
+        /*}
 
 
-        Thread.sleep(3000);
+        Thread.sleep(3000);*/
 
         findCategoriesDropdown().click();
         Thread.sleep(2000);
